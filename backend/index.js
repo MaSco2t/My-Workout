@@ -5,12 +5,9 @@ import dotenv from "dotenv";
 const app = express();
 dotenv.config();
 
-
 var db = mysql.createConnection({
     host: process.env.HOST,
     user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE
 });
 
 db.connect((err)=>{
