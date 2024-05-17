@@ -8,6 +8,7 @@ dotenv.config();
 var db = mysql.createConnection({
     host: process.env.HOST,
     user: process.env.USER,
+    database: process.env.DATABASE
 });
 
 db.connect((err)=>{
