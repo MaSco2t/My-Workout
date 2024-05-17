@@ -2,6 +2,8 @@ import express from "express";
 import mysql from "mysql";
 import dotenv from "dotenv";
 
+const port = process.env.PORT;
+
 const app = express();
 dotenv.config();
 
@@ -268,4 +270,4 @@ app.delete("/workouts/:userID/:workoutNumber",(req,res)=>{
     });
 });
 
-app.listen(3000);
+app.listen(port);
