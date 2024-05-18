@@ -25,7 +25,7 @@ function Settings(props){
             return;
         }
         setErrUser("");
-        axios.post("http://localhost:3000/users/new_username", {userID:props.userInfo.userID, username:newName})
+        axios.post("https://my-workout.onrender.com/users/new_username", {userID:props.userInfo.userID, username:newName})
         .then(result=>{
             if(result.data[0]=="ok"){
                 alert("success");
@@ -46,7 +46,7 @@ function Settings(props){
             setErrPass("One or more of your old password entries is incorrect");
             return;
         }
-        axios.post("http://localhost:3000/users/new_password", {userID:props.userInfo.userID, password:newPass})
+        axios.post("https://my-workout.onrender.com/users/new_password", {userID:props.userInfo.userID, password:newPass})
         .then(result=>{
             if(result.data[0]=="ok"){
                 alert("success");

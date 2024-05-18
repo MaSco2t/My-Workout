@@ -37,7 +37,7 @@ function Authentication(props) {
             path_extension="login";
         }
 
-        axios.post("http://localhost:3000/users/" + path_extension, credentials)
+        axios.post("https://my-workout.onrender.com/users/" + path_extension, credentials)
         .then((result)=>{
             if(result.data[0]=="ok"){
                 delete result.data[1].workoutCount;

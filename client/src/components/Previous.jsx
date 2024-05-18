@@ -20,7 +20,7 @@ function Previous(props){
 
     function submitEditedWorkout(){
         var workoutNumber = newWorkout[0].workoutNumber;
-        axios.post("http://localhost:3000/workouts/" + workoutNumber, {newWorkout})
+        axios.post("https://my-workout.onrender.com/workouts/" + workoutNumber, {newWorkout})
         .then((result)=>{
             console.log("workout updated");
             props.setActive(3);
@@ -30,7 +30,7 @@ function Previous(props){
 
     function deleteWorkout(num){
         console.log("delete bruh");
-        axios.delete("http://localhost:3000/workouts" +`/${userID}/${num}`, )
+        axios.delete("https://my-workout.onrender.com/workouts" +`/${userID}/${num}`, )
         .then((result)=>{
             console.log("workout deleted");
             props.setActive(3);
@@ -45,7 +45,7 @@ function Previous(props){
                 setNoWorkouts(true);
             }
             for(var i=1; i<=workoutCount;i++){
-                await axios.get("http://localhost:3000/workouts/" + userID + "/" + i)
+                await axios.get("https://my-workout.onrender.com/workouts/" + userID + "/" + i)
                 .then(result=>{
                     arr.push(result.data);
                 })
@@ -56,7 +56,7 @@ function Previous(props){
         }
     
         if(!dataReceived){
-            axios.get("http://localhost:3000/workouts/count/" + userID)
+            axios.get("https://my-workout.onrender.com/workouts/count/" + userID)
             .then(result=>{
                 var workout_list = [];
                 //In JS null evaluates to 0 when used with < and > comparison operators.

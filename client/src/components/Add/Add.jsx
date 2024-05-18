@@ -43,7 +43,7 @@ function Add(props){
             return;
         }
         e.preventDefault();
-        axios.post("http://localhost:3000/workouts", {excercises:excercises, info:props.userInfo})
+        axios.post("https://my-workout.onrender.com/workouts", {excercises:excercises, info:props.userInfo})
         .then((result)=>{
             if(result[0] = "ok"){
                console.log("Yay")
