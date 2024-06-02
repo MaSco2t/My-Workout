@@ -80,8 +80,8 @@ function Add(props){
                                 <div className="excercise">
                                         <p>Excercise {excercise.number}: {excercise.name}</p>
                                         <p>Sets {excercise.sets}</p>  
-                                    {type=="repBased" &&  <p>Reps: {excercise.reps}</p>}
-                                    {type=="timeBased" && <p>Time: {excercise.time}</p>}  
+                                    {excercise.reps!=null &&  <p>Reps: {excercise.reps}</p>}
+                                    {excercise.time!=null && <p>Time: {excercise.time}</p>}  
                                     <p>Weight: {excercise.weight}lbs</p>  
                                     <button className="deleteExcercise" onClick={() => { deleteExcercise(excercise.number)}}>Delete</button>
                                 </div>
